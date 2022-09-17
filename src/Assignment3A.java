@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 import javax.lang.model.util.ElementScanner14;
-
 import java.util.*;
 
 public class Assignment3A {
