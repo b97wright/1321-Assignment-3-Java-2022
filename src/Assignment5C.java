@@ -5,11 +5,11 @@ public class Assignment5C {
     public static void main(String[] args)
     {
         Scanner myObj = new Scanner(System.in);
-        String device;
+        String device, choice;
         double version;
-        boolean isNFC;
+        boolean isNFC = false;
 
-        System.out.println("What mobile device do you have? ");
+        System.out.print("What mobile device do you have? ");
         device = myObj.nextLine();
 
         device = device.toLowerCase();
@@ -17,13 +17,12 @@ public class Assignment5C {
         switch (device) {
             case "apple":
             case "android":
-                System.out.println("What version do you have? ");
-                uI = Console.ReadLine();
-                version = Convert.ToDouble(uI);
+                System.out.print("What version do you have? ");
+                version = myObj.nextDouble();
 
                 if (version >= 10)
                 {
-                    Console.WriteLine("Congratulations, you can run the app! ");
+                    System.out.print("Congratulations, you can run the app! ");
                     break;
                 }
 
@@ -31,9 +30,30 @@ public class Assignment5C {
 
                 break;
             default:
-                Console.WriteLine("I’m sorry.");
+                System.out.print("I'm sorry.");
                 break;
         }
+
+        if (isNFC == true)
+            {
+                System.out.print("Does your device support NFC? ");
+                choice = myObj.next();
+
+                choice = choice.toLowerCase();
+
+                switch (choice)
+                {
+                    case "yes":
+                        System.out.print("Congratulations, you can run the app!  ");
+                        break;
+                    case "no":
+                        System.out.print("I'm sorry, our app does not support your device.  ");
+                        break;
+                    default:
+                        System.out.print("Invalid Input! ");
+                        break;
+                }
+            }
 
     }
 }
